@@ -1,0 +1,253 @@
+/*********/
+/* About */
+/*********/
+
+header {
+    padding: 20;
+}
+
+.logo {
+    padding: 15;
+    font-weight: bold;
+    font-size: 20;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color:black;
+    background-color: white;
+    padding:0;
+    margin:0;
+}
+
+.main-body {
+  margin-left: 20%; 
+  margin-right: 20%;
+}
+
+.row {
+    display: flex;
+    padding: 30;
+}
+
+.intro {
+    width: 70%;
+}
+
+footer {
+    text-align: center;
+    padding: 50px;
+}
+
+img {
+    border-radius: 50%;
+}
+
+.nav {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    left: 70%;
+    top: 40px;
+    font-weight: lighter;
+}
+
+.nav div:hover {
+    opacity: 0.7;
+}
+
+.circle-row {
+    padding-top: 10;
+}
+
+.circle {
+    position: relative;
+    height: 120px;
+    width: 120px;
+    background-color: #FDB515;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 40;
+}
+
+.circle-text {
+    font-weight: bolder;
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+}
+
+.circle-text-teaching {
+  font-weight: bolder;
+  position: absolute;
+  top: 35%;
+  width: 100%;
+  text-align: center;
+}
+
+.social-media {
+    display: flex;
+    font-size: 30;
+    margin-left: 90%;
+}
+
+.social-media div {
+    margin-right: 20;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+/*************/
+/** Loading **/
+/*************/
+ 
+.pyramid {
+    --unit: 0.7vmin;
+    --side: calc(var(--unit) * 30);
+    --rotateY: 0deg;
+    --rotateX: 0deg;
+    --fold: 0deg;
+    
+    --shape-square: polygon(0% 100%, 0% 0%, 100% 0%, 100% 100%);
+    --shape-triangle: polygon(0% 100%, 50% 0%, 50% 0%, 100% 100%);
+    
+    width: var(--side);
+    height: var(--side);
+    
+    transform:
+      rotateX(var(--rotateX))
+      rotateY(var(--rotateY))
+      translateZ(var(--z, 0));
+    transform-style: preserve-3d;
+    will-change: transform;
+    
+    transition: transform 900ms ease-out;
+    
+    opacity: var(--opacity, 0);
+  }
+  .pyramid div {
+    width: var(--side);
+    height: var(--side);
+    position: absolute;
+    
+    transition: 
+      transform 900ms ease-out,
+      opacity var(--opacity-delay, 0ms) ease-out,
+      -webkit-clip-path 900ms ease-out, /* for Safari 11 and iOS 11 */
+      clip-path 900ms ease-out;
+    transition-delay: 0ms, var(--opacity-delay, 0ms), 0ms;
+    opacity: var(--opacity, 0);
+  }
+  .pyramid .base {
+    background: #003262;
+  }
+  .pyramid div:not(.base) {
+    /* Safari 11 (iOS 11) still requires prefix for clip path */
+    -webkit-clip-path: var(--clipped, var(--shape-square));
+    clip-path: var(--clipped, var(--shape-square));
+    background: hsla(var(--hue, 209), 100%, 56%, .68);
+    transform-origin: 0% 100%;
+    
+    transform:
+      rotateZ(var(--rotateZ, 0deg))
+      translate(var(--x, 0), var(--y, calc(var(--side) * -1)))
+      rotateX(var(--fold, 0deg));
+  }
+  .pyramid div:nth-child(2) {
+    --hue: 41;
+    --rotateZ: 90deg;
+    --x: calc(var(--side) * -1);
+  }
+  .pyramid div:nth-child(3) {
+    --hue: 209;
+    --rotateZ: 180deg;
+    --x: calc(var(--side) * -1);
+    --y: 0;
+  }
+  .pyramid div:nth-child(4) {
+    --hue: 41;
+    --rotateZ: 270deg;
+    --y: 0;
+  }
+  
+  /* rotate them as though they were in a ... display case */
+  .display-case {
+    transform-style: preserve-3d;
+    transform: translateY(5vmin) rotateY(0deg);
+    animation: model-it 2900ms 1600ms ease-out;
+    animation-play-state: var(--rotation-state, running);
+  }
+  @keyframes model-it {
+    100% {
+      transform: translateY(5vmin) rotateY(180deg);
+    }
+  }
+  
+  /* stack the pyramids and fade them in */
+  .pyramid:nth-of-type(1) {
+    --z: calc(var(--unit) * -2.67);
+    --opacity: 1;
+  }
+  .pyramid:nth-of-type(2) {
+    --rotateZ: 30deg;
+    --opacity-delay: 900ms;
+  }
+  .pyramid:nth-of-type(3) {
+    --rotateZ: 60deg;
+    --z: calc(var(--unit) * 2.67);
+    --opacity-delay: 1800ms;
+  }
+  
+  .loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    perspective: 800px;
+    position: relative;
+  }
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+/************/
+/** Mobile **/
+/************/
+
+@media screen and (max-width: 700px) {
+    .row {
+        flex-direction: column;
+    }
+
+    header {
+      margin-bottom: 50;
+    }
+
+    .logo {
+      display: none;
+    }
+
+    .nav {
+      left: 5%;
+    }
+
+    .circle-row {
+        display: none;
+    }
+
+    .intro {
+      width: 100%;
+    }
+
+    .social-media {
+      margin-left: 70%;
+    }
+
+    .main-body {
+      margin: 5%;
+    }
+}
