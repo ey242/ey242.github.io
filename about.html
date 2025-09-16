@@ -18,21 +18,28 @@
           flex-direction: column;
           align-items: center;
           gap: 12px;
+          margin-top: 88px;
         }
+
+        .cv-btn {
+          display: block;
+          width: 150px; /* Adjust this value as needed */
+          margin: 0 auto;
+          margin-top: 4px; /* You can keep this or adjust */
+          padding: 6px 12px;
+          border: 1.5px solid #307ecc;
+          border-radius: 6px;
+          font-size: 14px;
+          color: #307ecc;
+          font-weight: 600;
+          text-decoration: none;
+        }
+        .cv-btn:hover { background: #307ecc; color: #fff; }
 
         .profile-pic {
           max-width: 100%;
           height: auto;
-          border-radius: 8px; /* keeps it a square/rounded shape instead of circle */
-        }
-
-        /* Square/rect headshot; change border-radius to 0 for a perfect square */
-        .headshot {
-          width: 200px;          /* shrink! adjust as you like */
-          aspect-ratio: 1 / 1;   /* keeps it square */
-          object-fit: cover;
-          border-radius: 8px;    /* square w/ slightly rounded corners */
-          margin-bottom: 12px;
+          border-radius: 12px; 
         }
         
         /* Socials row */
@@ -40,7 +47,7 @@
           display: flex;
           justify-content: center;
           gap: 14px;
-          width: 100%; /* Add this line to make the container full-width */
+          align-self: center;
           margin-bottom: 10px;
         }
         .social-media.inline i,
@@ -52,7 +59,7 @@
         }
         
         /* CV button under icons */
-        .cv-btn {
+        /* .cv-btn {
           display: inline-block;
           margin-top: 4px;
           padding: 6px 12px;
@@ -62,8 +69,8 @@
           color: #307ecc;
           font-weight: 600;
           text-decoration: none;
-        }
-        .cv-btn:hover { background: #307ecc; color: #fff; }
+        } */
+        /* .cv-btn:hover { background: #307ecc; color: #fff; } */
     </style>
 
 </head>
@@ -80,10 +87,10 @@
     </header> 
 
     <div class="row">
-        <div class="column profile" style="padding-left: 10%;">
+        <div class="column profile">
           <img src="assets/images/eunice.png" class="profile-pic">
-        
-          <div class="social-media inline">
+          
+          <!-- <div class="social-media inline">
             <a href="https://scholar.google.com/citations?hl=en&user=oqQDfCEAAAAJ" aria-label="Google Scholar">
               <i class="ai ai-google-scholar"></i>
             </a>
@@ -96,10 +103,10 @@
             <a href="mailto:ey242@berkeley.edu" aria-label="Email">
               <ion-icon name="mail"></ion-icon>
             </a>
-          </div>
-        
+          </div> -->
+          
           <a class="cv-btn" href="assets/doc/Eunice Yiu - CV.pdf" target="_blank" rel="noopener">
-            View CV (PDF)
+            Curriculum Vitae
           </a>
         </div>
 
@@ -108,7 +115,7 @@
             <p class="intro">Hi! My name is Eunice Yiu. I am a postdoctoral scholar in <a href="https://psychology.berkeley.edu/" target="_blank" style="color:#307ecc;">Psychology at UC Berkeley</a>. I am fortunate to have <a href="https://www.gopniklab.berkeley.edu/" target="_blank" style="color:#307ecc;">Dr. Alison Gopnik</a> as my advisor.</p>
             <p class="intro">I study how children generalize from few observations, using abstraction, analogy, and active exploration to build causal models of the world. By comparing these capacities with AI systems, I develop developmental datasets and curricula that reveal the strengths and limits of AI models, and design human-inspired approaches for building more adaptive and flexible AI. My work is in collaboration with <a href="https://bair.berkeley.edu/" target="_blank" style="color:#307ecc;">Berkeley AI Research Lab</a> and <a href="https://deepmind.google/" target="_blank" style="color:#307ecc;">Google DeepMind</a>.</p>
             <p class="intro">Before starting my PhD, I received my BA in Psychology, Biology and Economics from Cornell University.</p>
-            <div class="circle-row">
+            <!-- <div class="circle-row">
                 <span class="circle">
                     <div class="circle-text"><a  href="about.html" style="text-decoration:none; color:#003262;">About</a></div>
                 </span>
@@ -118,7 +125,7 @@
                 <span class="circle" style="background-color: #FFDF98">
                     <div class="circle-text-teaching"><a href="teaching.html" style="text-decoration:none; color:#003262;">Teaching<br>& Mentorship</br></a></div>
                 </span>
-            </div>
+            </div> -->
         </div>
     </div>
 
