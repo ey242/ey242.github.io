@@ -21,6 +21,42 @@
             align-items: center;
             gap: 20px;
         }
+    /* Left column layout for photo + actions */
+    .column.profile {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    
+    /* Square/rect headshot; change border-radius to 0 for a perfect square */
+    .headshot {
+      width: 260px;            /* adjust as you like */
+      aspect-ratio: 1 / 1;     /* keeps it square */
+      object-fit: cover;
+      border-radius: 8px;      /* set to 0 if you want sharp corners */
+    }
+    
+    /* CV button styling */
+    .cv-btn {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1.5px solid #003262;
+      border-radius: 8px;
+      color: #003262;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .cv-btn:hover { background: #003262; color: #fff; }
+    
+    /* Inline socials under photo */
+    .social-media.inline a { margin-right: 10px; }
+    
+    /* Keep it neat on mobile */
+    @media (max-width: 768px) {
+      .headshot { width: 180px; }
+      .column.profile { align-items: center; }
+    }
     </style> -->
 
 </head>
