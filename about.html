@@ -28,7 +28,13 @@
           align-items: flex-start;
           gap: 12px;
         }
-        
+
+        .profile-pic {
+          max-width: 100%;
+          height: auto;
+          border-radius: 8px; /* keeps it a square/rounded shape instead of circle */
+        }
+
         /* Square/rect headshot; change border-radius to 0 for a perfect square */
         .headshot {
           width: 200px;          /* shrink! adjust as you like */
@@ -82,7 +88,7 @@
 
     <div class="row">
         <div class="column profile" style="padding-left: 10%;">
-          <img src="assets/images/eunice.png" class="headshot" alt="Eunice Yiu headshot">
+          <img src="assets/images/eunice.png" class="profile-pic">
         
           <!-- Social icons under the photo -->
           <div class="social-media inline">
