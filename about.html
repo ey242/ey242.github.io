@@ -21,42 +21,50 @@
             align-items: center;
             gap: 20px;
         }
-    /* Left column layout for photo + actions */
-    .column.profile {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 12px;
-    }
-    
-    /* Square/rect headshot; change border-radius to 0 for a perfect square */
-    .headshot {
-      width: 260px;            /* adjust as you like */
-      aspect-ratio: 1 / 1;     /* keeps it square */
-      object-fit: cover;
-      border-radius: 8px;      /* set to 0 if you want sharp corners */
-    }
-    
-    /* CV button styling */
-    .cv-btn {
-      display: inline-block;
-      padding: 8px 14px;
-      border: 1.5px solid #003262;
-      border-radius: 8px;
-      color: #003262;
-      font-weight: 600;
-      text-decoration: none;
-    }
-    .cv-btn:hover { background: #003262; color: #fff; }
-    
-    /* Inline socials under photo */
-    .social-media.inline a { margin-right: 10px; }
-    
-    /* Keep it neat on mobile */
-    @media (max-width: 768px) {
-      .headshot { width: 180px; }
-      .column.profile { align-items: center; }
-    }
+        /* Left column layout for photo + actions */
+        .column.profile {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 12px;
+        }
+        
+        /* Square/rect headshot; change border-radius to 0 for a perfect square */
+        .headshot {
+          width: 200px;          /* shrink! adjust as you like */
+          aspect-ratio: 1 / 1;   /* keeps it square */
+          object-fit: cover;
+          border-radius: 8px;    /* square w/ slightly rounded corners */
+          margin-bottom: 12px;
+        }
+        
+        /* Socials row */
+        .social-media.inline {
+          display: flex;
+          gap: 14px;
+          margin-bottom: 10px;
+        }
+        .social-media.inline i,
+        .social-media.inline ion-icon {
+          font-size: 24px;
+          width: 24px;
+          height: 24px;
+          color: #003262;
+        }
+        
+        /* CV button under icons */
+        .cv-btn {
+          display: inline-block;
+          margin-top: 4px;
+          padding: 6px 12px;
+          border: 1.5px solid #003262;
+          border-radius: 6px;
+          font-size: 14px;
+          color: #003262;
+          font-weight: 600;
+          text-decoration: none;
+        }
+        .cv-btn:hover { background: #003262; color: #fff; }
     </style> -->
 
 </head>
@@ -76,27 +84,28 @@
         <div class="column profile" style="padding-left: 10%;">
           <img src="assets/images/eunice.png" class="headshot" alt="Eunice Yiu headshot">
         
-          <!-- CV link opens in a new tab -->
-          <a class="cv-btn" href="assets/docs/Eunice_Yiu_CV.pdf" target="_blank" rel="noopener">
-            View CV (PDF)
-          </a>
-        
           <!-- Social icons under the photo -->
           <div class="social-media inline">
             <a href="https://scholar.google.com/citations?hl=en&user=oqQDfCEAAAAJ" aria-label="Google Scholar">
-              <i class="ai ai-google-scholar" style="font-size:28px; color:#003262;"></i>
+              <i class="ai ai-google-scholar"></i>
             </a>
             <a href="https://github.com/ey242" aria-label="GitHub">
-              <ion-icon name="logo-github" style="width:28px; height:28px; color:#003262;"></ion-icon>
+              <ion-icon name="logo-github"></ion-icon>
             </a>
             <a href="https://www.linkedin.com/in/euniceyiu/" aria-label="LinkedIn">
-              <ion-icon name="logo-linkedin" style="width:28px; height:28px; color:#003262;"></ion-icon>
+              <ion-icon name="logo-linkedin"></ion-icon>
             </a>
             <a href="mailto:ey242@berkeley.edu" aria-label="Email">
-              <ion-icon name="mail" style="width:28px; height:28px; color:#003262;"></ion-icon>
+              <ion-icon name="mail"></ion-icon>
             </a>
           </div>
+        
+          <!-- CV link under icons -->
+          <a class="cv-btn" href="assets/docs/Eunice_Yiu_CV.pdf" target="_blank" rel="noopener">
+            View CV (PDF)
+          </a>
         </div>
+
 
         <div class="column" style="padding-left: 5%;">
             <p><b style="font-size: 50; color:#003262; font-weight: bolder;">About Me</b></p>
