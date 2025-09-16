@@ -13,19 +13,10 @@
     <link rel="manifest" href="favicon_io/site.webmanifest">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons/css/academicons.min.css">
     <style>
-        .social-media {
-            position: fixed;
-            top: 80px;
-            right: 1000px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        /* Left column layout for photo + actions */
         .column.profile {
           display: flex;
           flex-direction: column;
-          align-items: flex-start;
+          align-items: center;
           gap: 12px;
         }
 
@@ -47,7 +38,9 @@
         /* Socials row */
         .social-media.inline {
           display: flex;
+          justify-content: center;
           gap: 14px;
+          width: 100%; /* Add this line to make the container full-width */
           margin-bottom: 10px;
         }
         .social-media.inline i,
@@ -90,7 +83,6 @@
         <div class="column profile" style="padding-left: 10%;">
           <img src="assets/images/eunice.png" class="profile-pic">
         
-          <!-- Social icons under the photo -->
           <div class="social-media inline">
             <a href="https://scholar.google.com/citations?hl=en&user=oqQDfCEAAAAJ" aria-label="Google Scholar">
               <i class="ai ai-google-scholar"></i>
@@ -106,12 +98,10 @@
             </a>
           </div>
         
-          <!-- CV link under icons -->
           <a class="cv-btn" href="assets/doc/Eunice Yiu - CV.pdf" target="_blank" rel="noopener">
             View CV (PDF)
           </a>
         </div>
-
 
         <div class="column" style="padding-left: 5%;">
             <p><b style="font-size: 50; color:#003262; font-weight: bolder;">About Me</b></p>
